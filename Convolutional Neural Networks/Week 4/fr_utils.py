@@ -12,30 +12,36 @@ from keras.layers.pooling import MaxPooling2D, AveragePooling2D
 import h5py
 import matplotlib.pyplot as plt
 
-
 _FLOATX = 'float32'
+
 
 def variable(value, dtype=_FLOATX, name=None):
     v = tf.Variable(np.asarray(value, dtype=dtype), name=name)
     _get_session().run(v.initializer)
     return v
 
+
 def shape(x):
     return x.get_shape()
+
 
 def square(x):
     return tf.square(x)
 
+
 def zeros(shape, dtype=_FLOATX, name=None):
     return variable(np.zeros(shape), dtype, name)
+
 
 def concatenate(tensors, axis=-1):
     if axis < 0:
         axis = axis % len(tensors[0].get_shape())
     return tf.concat(axis, tensors)
 
+
 def LRN2D(x):
     return tf.nn.lrn(x, alpha=1e-4, beta=0.75)
+
 
 def conv2d_bn(x,
               layer=None,
@@ -127,6 +133,7 @@ conv_shape = {
   'inception_5b_1x1_conv': [256, 736, 1, 1],
 }
 
+
 def load_weights_from_FaceNet(FRmodel):
     # Load weights from csv files (which was exported from Openface torch model)
     weights = WEIGHTS
@@ -138,6 +145,7 @@ def load_weights_from_FaceNet(FRmodel):
             FRmodel.get_layer(name).set_weights(weights_dict[name])
         elif model.get_layer(name) != None:
             model.get_layer(name).set_weights(weights_dict[name])
+
 
 def load_weights():
     # Set weights path
@@ -187,6 +195,7 @@ def load_dataset():
     test_set_y_orig = test_set_y_orig.reshape((1, test_set_y_orig.shape[0]))
     
     return train_set_x_orig, train_set_y_orig, test_set_x_orig, test_set_y_orig, classes
+
 
 def img_to_encoding(image_path, model):
     img1 = cv2.imread(image_path, 1)

@@ -8,6 +8,7 @@ import matplotlib.pyplot as plt
 def mean_pred(y_true, y_pred):
     return K.mean(y_pred)
 
+
 def load_dataset():
     train_dataset = h5py.File('datasets/train_happy.h5', "r")
     train_set_x_orig = np.array(train_dataset["train_set_x"][:]) # your train set features
@@ -23,4 +24,5 @@ def load_dataset():
     test_set_y_orig = test_set_y_orig.reshape((1, test_set_y_orig.shape[0]))
     
     return train_set_x_orig, train_set_y_orig, test_set_x_orig, test_set_y_orig, classes
+
 
