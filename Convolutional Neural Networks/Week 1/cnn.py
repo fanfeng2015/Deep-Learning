@@ -26,7 +26,7 @@ def zero_pad(X, pad):
     pad -- integer, amount of padding around each image on vertical and horizontal dimensions
     
     Returns:
-    X_pad -- padded image of shape (m, n_H + 2*pad, n_W + 2*pad, n_C)
+    X_pad -- padded image of shape (m, n_H + 2 * pad, n_W + 2 * pad, n_C)
     """
     
     ### START CODE HERE ### (≈ 1 line)
@@ -473,12 +473,12 @@ dA = np.random.randn(5, 4, 2, 2)
 dA_prev = pool_backward(dA, cache, mode = "max")
 print("mode = max")
 print('mean of dA = ', np.mean(dA))
-print('dA_prev[1,1] = ', dA_prev[1, 1])  
+print('dA_prev[1, 1] = ', dA_prev[1, 1])  
 print()
 dA_prev = pool_backward(dA, cache, mode = "average")
 print("mode = average")
 print('mean of dA = ', np.mean(dA))
-print('dA_prev[1,1] = ', dA_prev[1, 1]) 
+print('dA_prev[1, 1] = ', dA_prev[1, 1]) 
 
 
 
