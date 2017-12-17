@@ -126,3 +126,10 @@ def predict(X, parameters):
     return prediction
 
 
+
+
+
+
+
+
+

@@ -88,3 +88,10 @@ def draw_boxes(image, out_scores, out_boxes, out_classes, class_names, colors):
         del draw
 
 
+
+
+
+
+
+
+

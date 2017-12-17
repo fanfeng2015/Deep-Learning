@@ -206,3 +206,10 @@ def img_to_encoding(image_path, model):
     return embedding
 
 
+
+
+
+
+
+
+
