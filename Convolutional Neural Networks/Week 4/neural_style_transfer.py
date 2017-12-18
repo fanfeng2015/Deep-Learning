@@ -146,8 +146,6 @@ STYLE_LAYERS = [
 
 
 
-# GRADED FUNCTION: compute_style_cost
-
 def compute_style_cost(model, STYLE_LAYERS):
     """
     Computes the overall style cost from several chosen layers
