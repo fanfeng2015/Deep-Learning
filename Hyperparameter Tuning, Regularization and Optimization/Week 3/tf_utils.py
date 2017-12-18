@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 import math
 
+
 def load_dataset():
     train_dataset = h5py.File('datasets/train_signs.h5', "r")
     train_set_x_orig = np.array(train_dataset["train_set_x"][:]) # your train set features
@@ -60,6 +61,7 @@ def random_mini_batches(X, Y, mini_batch_size = 64, seed = 0):
     
     return mini_batches
 
+
 def convert_to_one_hot(Y, C):
     Y = np.eye(C)[Y.reshape(-1)].T
     return Y
@@ -91,6 +93,7 @@ def predict(X, parameters):
         
     return prediction
 
+
 def forward_propagation_for_predict(X, parameters):
     """
     Implements the forward propagation for the model: LINEAR -> RELU -> LINEAR -> RELU -> LINEAR -> SOFTMAX
@@ -119,4 +122,12 @@ def forward_propagation_for_predict(X, parameters):
     Z3 = tf.add(tf.matmul(W3, A2), b3)                     # Z3 = np.dot(W3,Z2) + b3
     
     return Z3
-    
+
+
+
+
+
+
+
+
+

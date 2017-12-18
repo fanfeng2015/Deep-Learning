@@ -3,6 +3,7 @@ import numpy as np
 import tensorflow as tf
 import math
 
+
 def load_dataset():
     train_dataset = h5py.File('datasets/train_signs.h5', "r")
     train_set_x_orig = np.array(train_dataset["train_set_x"][:]) # your train set features
@@ -60,9 +61,11 @@ def random_mini_batches(X, Y, mini_batch_size = 64, seed = 0):
     
     return mini_batches
 
+
 def convert_to_one_hot(Y, C):
     Y = np.eye(C)[Y.reshape(-1)].T
     return Y
+
 
 def predict(X, parameters):
     
@@ -174,11 +177,6 @@ def compute_cost(z3, Y):
     return cost
 
 
-
-
-
-
-
 def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
           num_epochs = 1500, minibatch_size = 32, print_cost = True):
     """
@@ -287,3 +285,12 @@ def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
         print ("Test Accuracy:", accuracy.eval({X: X_test, Y: Y_test}))
         
         return parameters
+
+
+
+
+
+
+
+
+

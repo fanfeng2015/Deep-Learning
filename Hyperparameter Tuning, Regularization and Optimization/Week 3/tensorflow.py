@@ -11,16 +11,16 @@ np.random.seed(1)
 
 
 
-y_hat = tf.constant(36, name = 'y_hat')            # Define y_hat constant. Set to 36.
-y = tf.constant(39, name = 'y')                    # Define y. Set to 39
+y_hat = tf.constant(36, name = 'y_hat')               # Define y_hat constant. Set to 36.
+y = tf.constant(39, name = 'y')                       # Define y. Set to 39
 
-loss = tf.Variable((y - y_hat) ** 2, name = 'loss')  # Create a variable for the loss
+loss = tf.Variable((y - y_hat) ** 2, name = 'loss')   # Create a variable for the loss
 
-init = tf.global_variables_initializer()         # When init is run later (session.run(init)),
-                                                 # the loss variable will be initialized and ready to be computed
-with tf.Session() as session:                    # Create a session and print the output
-    session.run(init)                            # Initializes the variables
-    print(session.run(loss))                     # Prints the loss
+init = tf.global_variables_initializer()              # When init is run later (session.run(init)),
+                                                      # the loss variable will be initialized and ready to be computed
+with tf.Session() as session:                         # Create a session and print the output
+    session.run(init)                                 # Initializes the variables
+    print(session.run(loss))                          # Prints the loss
 
 a = tf.constant(2)
 b = tf.constant(10)
@@ -43,9 +43,9 @@ sess.close()
 def linear_function():
     """
     Implements a linear function: 
-            Initializes W to be a random tensor of shape (4,3)
-            Initializes X to be a random tensor of shape (3,1)
-            Initializes b to be a random tensor of shape (4,1)
+            Initializes W to be a random tensor of shape (4, 3)
+            Initializes X to be a random tensor of shape (3, 1)
+            Initializes b to be a random tensor of shape (4, 1)
     Returns: 
     result -- runs the session for Y = WX + b 
     """
@@ -160,7 +160,7 @@ print ("cost = " + str(cost))
 def one_hot_matrix(labels, C):
     """
     Creates a matrix where the i-th row corresponds to the ith class number and the jth column
-                     corresponds to the jth training example. So if example j had a label i. Then entry (i,j) 
+                     corresponds to the jth training example. So if example j had a label i. Then entry (i, j) 
                      will be 1. 
                      
     Arguments:
@@ -416,6 +416,8 @@ with tf.Session() as sess:
     print("cost = " + str(cost))
 
 
+
+# GRADED FUNCTION: model
 
 def model(X_train, Y_train, X_test, Y_test, learning_rate = 0.0001,
           num_epochs = 1500, minibatch_size = 32, print_cost = True):
