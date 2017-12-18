@@ -4,6 +4,7 @@ import h5py
 import sklearn
 import sklearn.datasets
 
+
 def sigmoid(x):
     """
     Compute the sigmoid of x
@@ -16,6 +17,7 @@ def sigmoid(x):
     """
     s = 1/(1+np.exp(-x))
     return s
+
 
 def relu(x):
     """
@@ -30,6 +32,7 @@ def relu(x):
     s = np.maximum(0,x)
     
     return s
+
 
 def forward_propagation(X, parameters):
     """
@@ -70,6 +73,7 @@ def forward_propagation(X, parameters):
     
     return a3, cache
 
+
 def backward_propagation(X, Y, cache):
     """
     Implement the backward propagation presented in figure 2.
@@ -105,6 +109,7 @@ def backward_propagation(X, Y, cache):
     
     return gradients
 
+
 def update_parameters(parameters, grads, learning_rate):
     """
     Update parameters using gradient descent
@@ -128,6 +133,7 @@ def update_parameters(parameters, grads, learning_rate):
         
     return parameters
 
+
 def compute_loss(a3, Y):
     
     """
@@ -146,6 +152,7 @@ def compute_loss(a3, Y):
     loss = 1./m * np.nansum(logprobs)
     
     return loss
+
 
 def load_cat_dataset():
     train_dataset = h5py.File('datasets/train_catvnoncat.h5', "r")
@@ -168,6 +175,7 @@ def load_cat_dataset():
     test_set_x = test_set_x_orig/255
 
     return train_set_x, train_set_y, test_set_x, test_set_y, classes
+
 
 def predict(X, y, parameters):
     """
@@ -199,6 +207,7 @@ def predict(X, y, parameters):
     
     return p
 
+
 def plot_decision_boundary(model, X, y):
     # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
@@ -216,6 +225,7 @@ def plot_decision_boundary(model, X, y):
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
     plt.show()
     
+
 def predict_dec(parameters, X):
     """
     Used for plotting decision boundary.
@@ -232,6 +242,7 @@ def predict_dec(parameters, X):
     a3, cache = forward_propagation(X, parameters)
     predictions = (a3>0.5)
     return predictions
+
 
 def load_dataset():
     np.random.seed(1)

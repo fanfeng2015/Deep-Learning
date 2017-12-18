@@ -1,5 +1,6 @@
 import numpy as np
 
+
 def sigmoid(x):
     """
     Compute the sigmoid of x
@@ -12,6 +13,7 @@ def sigmoid(x):
     """
     s = 1/(1+np.exp(-x))
     return s
+
 
 def relu(x):
     """
@@ -26,6 +28,7 @@ def relu(x):
     s = np.maximum(0,x)
     
     return s
+
 
 def dictionary_to_vector(parameters):
     """
@@ -47,6 +50,7 @@ def dictionary_to_vector(parameters):
 
     return theta, keys
 
+
 def vector_to_dictionary(theta):
     """
     Unroll all our parameters dictionary from a single vector satisfying our specific required shape.
@@ -60,6 +64,7 @@ def vector_to_dictionary(theta):
     parameters["b3"] = theta[46:47].reshape((1,1))
 
     return parameters
+
 
 def gradients_to_vector(gradients):
     """

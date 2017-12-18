@@ -6,6 +6,7 @@ import sklearn.datasets
 import sklearn.linear_model
 import scipy.io
 
+
 def sigmoid(x):
     """
     Compute the sigmoid of x
@@ -18,6 +19,7 @@ def sigmoid(x):
     """
     s = 1/(1+np.exp(-x))
     return s
+
 
 def relu(x):
     """
@@ -32,6 +34,7 @@ def relu(x):
     s = np.maximum(0,x)
     
     return s
+
 
 def load_planar_dataset(seed):
     
@@ -55,6 +58,7 @@ def load_planar_dataset(seed):
     Y = Y.T
 
     return X, Y
+
 
 def initialize_parameters(layer_dims):
     """
@@ -87,6 +91,7 @@ def initialize_parameters(layer_dims):
 
         
     return parameters
+
 
 def forward_propagation(X, parameters):
     """
@@ -126,6 +131,7 @@ def forward_propagation(X, parameters):
     
     return A3, cache
 
+
 def backward_propagation(X, Y, cache):
     """
     Implement the backward propagation presented in figure 2.
@@ -161,6 +167,7 @@ def backward_propagation(X, Y, cache):
     
     return gradients
 
+
 def update_parameters(parameters, grads, learning_rate):
     """
     Update parameters using gradient descent
@@ -186,6 +193,7 @@ def update_parameters(parameters, grads, learning_rate):
         parameters["b" + str(k+1)] = parameters["b" + str(k+1)] - learning_rate * grads["db" + str(k+1)]
         
     return parameters
+
 
 def predict(X, y, parameters):
     """
@@ -220,6 +228,7 @@ def predict(X, y, parameters):
     
     return p
 
+
 def compute_cost(a3, Y):
     """
     Implement the cost function
@@ -237,6 +246,7 @@ def compute_cost(a3, Y):
     cost = 1./m * np.nansum(logprobs)
     
     return cost
+
 
 def load_dataset():
     train_dataset = h5py.File('datasets/train_catvnoncat.h5', "r")
@@ -260,6 +270,7 @@ def load_dataset():
 
     return train_set_x, train_set_y, test_set_x, test_set_y, classes
 
+
 def predict_dec(parameters, X):
     """
     Used for plotting decision boundary.
@@ -276,6 +287,7 @@ def predict_dec(parameters, X):
     a3, cache = forward_propagation(X, parameters)
     predictions = (a3>0.5)
     return predictions
+
 
 def load_planar_dataset(randomness, seed):
     
@@ -306,6 +318,7 @@ def load_planar_dataset(randomness, seed):
 
     return X, Y
 
+
 def plot_decision_boundary(model, X, y):
     # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1
@@ -322,6 +335,7 @@ def plot_decision_boundary(model, X, y):
     plt.xlabel('x1')
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.cm.Spectral)
     plt.show()
+    
     
 def load_2D_dataset():
     data = scipy.io.loadmat('datasets/data.mat')
