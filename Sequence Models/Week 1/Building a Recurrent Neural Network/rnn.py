@@ -716,7 +716,7 @@ print("gradients[\"dbi\"].shape =", gradients["dbi"].shape)
 print("gradients[\"dbc\"][4] =", gradients["dbc"][4])
 print("gradients[\"dbc\"].shape =", gradients["dbc"].shape)
 print("gradients[\"dbo\"][4] =", gradients["dbo"][4])
-print("gradients[\"dbo\"].shape =", gradients["dbo"].shape) 
+print("gradients[\"dbo\"].shape =", gradients["dbo"].shape)
 
 
 
