@@ -251,6 +251,3 @@ print ("y = " + str(np.squeeze(my_predicted_image)) + ", your L-layer model pred
 
 
 
-
-
-
