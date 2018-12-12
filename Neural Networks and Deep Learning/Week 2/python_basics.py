@@ -321,3 +321,6 @@ print("L2 = " + str(L2(yhat, y)))
 
 
 
+
+
+
